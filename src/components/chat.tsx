@@ -19,7 +19,7 @@ export function Chat() {
 
     console.log(messages);
     return (
-        <main className="flex flex-col w-full h-screen max-h-dvh bg-background">
+        <main className="flex flex-col w-full h-screen max-h-dvh bg-muted/50">
             <header className="p-4 mb-4 border-b w-full max-w-3xl mx-auto flex justify-between items-center">
                 <h1 className="text-2xl font-bold">AI Chat</h1>
                 <div>
@@ -30,14 +30,14 @@ export function Chat() {
             <section className="container px-0 flex flex-col flex-grow gap-4 mx-auto max-w-3xl">
                 <ul
                     ref={chatParent}
-                    className="h-1 p-4 flex-grow bg-muted/50 rounded-lg overflow-y-auto flex flex-col gap-4">
+                    className="h-1 p-4 flex-grow dark:bg-muted/50 bg-background rounded-lg overflow-y-auto flex flex-col gap-4">
                     {messages.map((m) => (
                         <>
                             {m.role === "user" ? (
                                 <li
                                     key={m.id}
                                     className="flex flex-row-reverse flex-wrap">
-                                    <div className="rounded-xl p-4 bg-background shadow-md block w-3/4">
+                                    <div className="rounded-xl p-4 bg-background shadow-md block max-w-3/4">
                                         <p className="text-foreground block">
                                             {m.content}
                                         </p>
@@ -45,7 +45,7 @@ export function Chat() {
                                 </li>
                             ) : (
                                 <li key={m.id} className="flex">
-                                    <div className="rounded-xl p-4 bg-background shadow-md flex">
+                                    <div className="rounded-xl p-4 bg-background shadow-md flex max-w-3/4">
                                         <p className="text-foreground">
                                             <span className="font-bold">
                                                 Answer:{" "}
