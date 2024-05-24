@@ -18,7 +18,7 @@ export function Chat() {
 
     return (
         <>
-            <section className="container px-0 flex flex-col flex-grow gap-4 mx-auto max-w-3xl">
+            <section className="container px-0 flex flex-col gap-4 mx-auto max-w-3xl flex-grow">
                 <ul
                     ref={chatParent}
                     className="h-1 p-4 flex-grow dark:bg-muted/50 bg-background rounded-lg overflow-y-auto flex flex-col gap-4">
@@ -50,7 +50,7 @@ export function Chat() {
                     ))}
                 </ul>
             </section>
-            <section className="p-4">
+            <section className="py-4">
                 <form
                     onSubmit={handleSubmit}
                     className="flex w-full max-w-3xl mx-auto items-center">
