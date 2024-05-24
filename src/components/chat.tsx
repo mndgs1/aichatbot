@@ -28,7 +28,7 @@ export function Chat() {
                                 <li
                                     key={m.id}
                                     className="flex flex-row-reverse flex-wrap">
-                                    <div className="rounded-xl p-4 bg-background shadow-md block max-w-3/4">
+                                    <div className="rounded-xl p-4 bg-muted/50 dark:bg-background/40 shadow-md block max-w-3/4">
                                         <p className="text-foreground block">
                                             {m.content}
                                         </p>
