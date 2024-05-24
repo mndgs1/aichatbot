@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useChat } from "ai/react";
 import { useRef, useEffect } from "react";
-import { ModeToggle } from "./dark-mode-switch";
 
 export function Chat() {
     const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -17,16 +16,8 @@ export function Chat() {
         }
     });
 
-    console.log(messages);
     return (
-        <main className="flex flex-col w-full h-screen max-h-dvh bg-muted/50">
-            <header className="p-4 mb-4 border-b w-full max-w-3xl mx-auto flex justify-between items-center">
-                <h1 className="text-2xl font-bold">AI Chat</h1>
-                <div>
-                    <ModeToggle />
-                </div>
-            </header>
-
+        <>
             <section className="container px-0 flex flex-col flex-grow gap-4 mx-auto max-w-3xl">
                 <ul
                     ref={chatParent}
@@ -75,6 +66,6 @@ export function Chat() {
                     </Button>
                 </form>
             </section>
-        </main>
+        </>
     );
 }
